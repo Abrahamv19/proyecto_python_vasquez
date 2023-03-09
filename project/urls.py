@@ -15,9 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from BlogFinanciero.views import index
+from BlogFinanciero.views import index, blogueros, temas, lectores, agregar_temas, agregar_blogueros, agregar_lectores, mostrar_temas, buscar_tema
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
+    path('blogueros', blogueros, name="blogueros" ),
+    path('temas', mostrar_temas, name="mostrar_temas"),
+    path('lectores', lectores, name="lectores"),
+    path('temas/agregar', agregar_temas, name="agregar_temas"),
+    path('blogueros/agregar', agregar_blogueros, name="agregar_blogueros" ),
+    path('lectores/agregar', agregar_lectores, name="agregar_lectores"),
+    path('index/buscar', buscar_tema, name="buscar_tema")
+    
+
 ]
